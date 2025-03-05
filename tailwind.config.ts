@@ -52,6 +52,7 @@ export default {
       "item-2h": "#4a4a51",
       "item-2a": "#4a4a51",
       // ----- Accents
+      "accent--1t": "#127cea2f",
       "accent-1": "#127cea",
       "accent-1h": "#2a89ef",
 

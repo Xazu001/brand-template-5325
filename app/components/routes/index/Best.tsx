@@ -1,5 +1,6 @@
 import { GoDotFill } from "react-icons/go";
 import { Link } from "@remix-run/react";
+import TransitionWrapper from "../../base/PageTransitionWrapper";
 
 export default function Best() {
   const projects = [
@@ -26,25 +27,27 @@ export default function Best() {
   ];
 
   return (
-    <section id="projects" className="relative">
-      <div className="bottom-0 absolute">
-        <Circles repeats={5} />
-      </div>
-      <div className="relative container">
-        <div className="relative flex items-center gap-4">
-          <h1 className="font-header">BEST PROJECTS</h1>
-          <GoDotFill className="text-4xl text-accent-1" />
+    <TransitionWrapper>
+      <section id="projects" className="relative">
+        <div className="bottom-0 absolute">
+          <Circles repeats={5} />
         </div>
-        <div className="gap-4 grid grid-cols-12 pt-title">
-          {projects.map((el) => (
-            <Link
-              to={`projects/${el.to}`}
-              className={`bg-item-1 min-h-[18rem] shadow-md hover:scale-[0.995] duration-300 border border-border-1 ${el.className} `}
-            ></Link>
-          ))}
+        <div className="relative container">
+          <div className="relative flex items-center gap-4">
+            <h1 className="font-header">BEST PROJECTS</h1>
+            <GoDotFill className="text-4xl text-accent-1" />
+          </div>
+          <div className="gap-4 grid grid-cols-12 pt-title">
+            {projects.map((el) => (
+              <Link
+                to={`projects/${el.to}`}
+                className={`bg-item-1 min-h-[18rem] hover:scale-[0.995] duration-300 border border-border-1 ${el.className} `}
+              ></Link>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </TransitionWrapper>
   );
 }
 

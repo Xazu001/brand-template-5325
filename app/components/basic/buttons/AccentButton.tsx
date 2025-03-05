@@ -52,7 +52,6 @@ export default function AccentButton({
     <div className={`relative ${className} `}>
       <button
         ref={ref}
-        // type="button"
         type={!type ? "button" : type}
         className={`absolute rounded-full w-full h-full button hover:shadow-s-accent-1 hover:shadow-button-md bg-accent-1 ${buttonClassName} ${
           submitting ? "bg-item-2" : "hover:bg-accent-1h"

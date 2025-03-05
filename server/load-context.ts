@@ -1,6 +1,10 @@
 import type { AppLoadContext } from "@remix-run/cloudflare";
 import type { PlatformProxy } from "wrangler";
 
+interface Env {
+  RESEND_KEY: string;
+}
+
 export type Cloudflare = Omit<PlatformProxy<Env>, "dispose">;
 
 declare module "@remix-run/cloudflare" {

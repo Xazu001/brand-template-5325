@@ -52,8 +52,7 @@ export default function ItemButton({
     <div className={`relative ${className} `}>
       <button
         ref={ref}
-        type="button"
-        // type={!type ? "submit" : "button"}
+        type={!type ? "button" : type}
         className={`absolute rounded-full w-full h-full button bg-item-2 ${buttonClassName} ${
           submitting ? "bg-item-2" : "hover:bg-item-2h"
         }`}

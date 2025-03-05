@@ -55,14 +55,18 @@ export default function Hero() {
 }
 
 function Tape() {
-  const titles = ["DISCUSS YOUR IDEAS", "ALIVE YOUR IDEAS", "EXPRESS YOURSELF"];
+  const titles = [
+    "DISCUSS YOUR IDEAS",
+    "BRING YOUR IDEAS TO LIFE",
+    "EXPRESS YOURSELF",
+  ];
 
   function title(title: string) {
     return (
       <div
         className="flex flex-shrink-0 justify-center items-center gap-4 mx-[4rem] py-6"
         style={{
-          width: "40rem",
+          width: "45rem",
         }}
       >
         <LuSparkle className="text-5xl fill-accent-1 text-accent-1" />

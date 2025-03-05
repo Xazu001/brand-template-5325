@@ -40,6 +40,10 @@ export default defineConfig({
           route("/projects/:project", "routes/projects/index.tsx", {
             index: true,
           });
+
+          // ----- Info
+          route("/404", "routes/info/404.tsx", { index: true });
+          route("/cookies", "routes/info/cookies.tsx", { index: true });
         });
       },
     }),

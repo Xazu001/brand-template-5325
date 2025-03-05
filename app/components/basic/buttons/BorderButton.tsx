@@ -52,7 +52,6 @@ export default function BorderButton({
     <div className={`relative ${className} `}>
       <button
         ref={ref}
-        // type="button"
         type={!type ? "button" : type}
         className={`absolute rounded-full w-full h-full button hover:shadow-s-accent-1 hover:shadow-button-md border-accent-1 border-2 ${buttonClassName} ${
           submitting ? "shadow-button-md shadow-s-accent-1" : ""
