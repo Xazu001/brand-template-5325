@@ -72,7 +72,7 @@ function Tape() {
           width: "45rem",
         }}
       >
-        <LuSparkle className="text-5xl fill-accent-1 text-accent-1" />
+        <LuSparkle className="flex-shrink-0 text-5xl fill-accent-1 text-accent-1" />
         <strong className="text-5xl">{title}</strong>
       </div>
     );
