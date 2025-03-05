@@ -11,15 +11,12 @@ export default function Nav() {
   return (
     <section className="py-0 bg-accent-1">
       <div className="flex justify-between items-center py-6 container">
-        <div className="group relative cursor-pointer">
+        <Link to="/" className="group relative cursor-pointer">
           <strong className="group-hover:blur-[1px] absolute opacity-80 font-header text-3xl duration-300">
             Temp
           </strong>
-          <Link to="/" className="font-header text-3xl">
-            Temp
-          </Link>
-        </div>
-
+          <strong className="font-header text-3xl">Temp</strong>
+        </Link>
         <ul className="flex gap-6">
           {links.map((link) => (
             <li key={link.to}>
