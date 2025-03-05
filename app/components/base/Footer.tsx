@@ -12,7 +12,7 @@ export default function Footer() {
           TERMS & AGREEMENTS
         </Link>
         <a
-          href="https://freepik.com"
+          href="https://github.com/Xazu001/brand-template-5325"
           target="_blank"
           rel="noreferrer"
           className="w-full text-2xl text-center text-accent-1"
