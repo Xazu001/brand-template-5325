@@ -31,18 +31,19 @@ export default function Hero() {
           </div>
           <div className="flex items-center gap-6 pt-12 container">
             {adj.map((el) => (
+              // biome-ignore lint/correctness/useJsxKeyInIterable: <explanation>
               <div className="flex items-center gap-3 px-6 py-2 border border-light rounded-full">
                 <strong>{el.icon}</strong>
                 <strong>{el.title}</strong>
               </div>
             ))}
-            <div className="flex-1 bg-light h-[2px]"></div>
+            <div className="flex-1 bg-light h-[2px]" />
           </div>
           <div className="pt-36 container">
             <div className="relative">
               <img
                 src="/img/hero.avif"
-                alt="Hero Abstract Image"
+                alt="Hero Abstract"
                 className="rounded-t-[6rem] w-full object-cover aspect-[15/9]"
               />
             </div>
@@ -59,6 +60,8 @@ function Tape() {
     "DISCUSS YOUR IDEAS",
     "BRING YOUR IDEAS TO LIFE",
     "EXPRESS YOURSELF",
+    "TURN DREAMS INTO REALITY",
+    "INNOVATE AND INSPIRE",
   ];
 
   function title(title: string) {
