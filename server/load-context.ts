@@ -1,9 +1,6 @@
 import type { AppLoadContext } from "@remix-run/cloudflare";
 import type { PlatformProxy } from "wrangler";
-
-interface Env {
-  RESEND_KEY: string;
-}
+import type { Env } from "@/worker-configuration";
 
 export type Cloudflare = Omit<PlatformProxy<Env>, "dispose">;
 
