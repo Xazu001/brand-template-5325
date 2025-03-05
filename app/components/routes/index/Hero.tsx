@@ -41,7 +41,7 @@ export default function Hero() {
           <div className="pt-36 container">
             <div className="relative">
               <img
-                src="/img/hero.jpg"
+                src="/img/hero.avif"
                 alt="Hero Abstract Image"
                 className="rounded-t-[6rem] w-full object-cover aspect-[15/9]"
               />

@@ -9,7 +9,7 @@ export default function About() {
           <h3 className="font-header">We provide</h3>
           <div className="rounded-full w-[12rem] h-[1.2ch] overflow-hidden">
             <img
-              src="/img/small.png"
+              src="/img/small.avif"
               alt="Small Decoration"
               className="w-full h-full object-fill translate-x-[0px]"
             />
@@ -19,7 +19,7 @@ export default function About() {
           <h3 className="font-header">solutions</h3>
           <div className="rounded-full w-[12rem] h-[1.2ch] overflow-hidden">
             <img
-              src="/img/small.png"
+              src="/img/small.avif"
               alt="Small Decoration"
               className="w-full h-full object-fill rotate-[180deg]"
             />
