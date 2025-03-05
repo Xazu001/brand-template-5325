@@ -3,7 +3,7 @@
 ## Description
 
 **Brand Template XN**  
-This is just a template that you can easily clone, modify, and deploy on Cloudflare Pages.
+A ready-to-use template that you can easily clone, customize, and deploy on Cloudflare Pages. It provides a solid foundation for building your brand's online presence quickly and efficiently.
 
 ## Basic Setup
 
@@ -14,16 +14,19 @@ This is just a template that you can easily clone, modify, and deploy on Cloudfl
    pages_build_output_dir = "./build/client"
 
    [vars]
-   RESEND_KEY = "(Your own Resend key from resend.com)"
+   RESEND_KEY = "(Your own Resend Key from resend.com)"
    FROM_EMAIL = "(Your sending email)"
    TO_EMAIL = "(Target email for sending)"
    ```
+  2. Customize the template:
+- Replace instances of "Temp" with your desired project name.
+- Modify tailwind.config.ts and other configuration files as needed to match your requirements.
 
 ## Installation
 
 1. **Clone the repository**:
    ```sh
-   git clone https://github.com/your-repository.git
+   git clone https://github.com/Xazu001/brand-template-5325.git
    ```
 
 2. **Install dependencies**:
