@@ -1,11 +1,14 @@
 import type { ActionFunctionArgs } from "@remix-run/node";
 import { Form } from "@remix-run/react";
-import Input from "../components/basic/inputs/InputWL";
-import ItemButton from "../components/basic/buttons/ItemButton";
+import Input from "#/components/basic/inputs/InputWL";
+import ItemButton from "#/components/basic/buttons/ItemButton";
 import { Resend } from "resend";
 import * as e from "#/lib/validator";
 import { useActionData } from "@remix-run/react";
 import { renderToString } from "react-dom/server";
+import Alert from "#/components/basic/inputs/Alert";
+import { useNavigation } from "@remix-run/react";
+import { useEffect } from "react";
 
 export const action = async ({ request, context }: ActionFunctionArgs) => {
   const formData = await request.formData();
@@ -82,6 +85,26 @@ export const action = async ({ request, context }: ActionFunctionArgs) => {
 
 export default function Index() {
   const actionData = useActionData<typeof action>();
+
+  const navigation = useNavigation();
+
+  useEffect(() => {
+    if (actionData?.data?.general) {
+      // biome-ignore lint/complexity/noForEach: <explanation>
+      document.getElementsByName("email").forEach((el) => {
+        if ((el as HTMLInputElement).value) {
+          (el as HTMLInputElement).value = "";
+        }
+      });
+      // biome-ignore lint/complexity/noForEach: <explanation>
+      document.getElementsByName("message").forEach((el) => {
+        if ((el as HTMLInputElement).value) {
+          (el as HTMLInputElement).value = "";
+        }
+      });
+    }
+  }, [actionData?.data]);
+
   return (
     <Form method="post" action=".">
       <div className="flex justify-center items-center min-h-svh">
@@ -92,7 +115,7 @@ export default function Index() {
               title="Email"
               placeholder="Enter your email!"
               alert={actionData?.errors?.email}
-            ></Input>
+            />
             <Input
               name="message"
               type="textarea"
@@ -100,9 +123,19 @@ export default function Index() {
               placeholder="Enter your message!"
               inputClassName="rounded-3xl"
               alert={actionData?.errors?.message}
-            ></Input>
-            <ItemButton type="submit" textClassName="py-3 px-9">
-              SEND
+            />
+            <Alert
+              type={actionData?.data?.general ? "info" : "alert"}
+              msg={actionData?.data?.general || actionData?.errors?.general}
+            />
+            <ItemButton
+              type="submit"
+              textClassName="py-3 px-9"
+              buttonClassName={`${
+                navigation.state === "submitting" ? "opacity-80" : ""
+              }`}
+            >
+              {navigation.state === "submitting" ? "..." : "SEND"}
             </ItemButton>
           </div>
         </section>
