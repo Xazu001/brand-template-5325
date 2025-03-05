@@ -5,6 +5,7 @@ import {
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { getLoadContext } from "./server/load-context";
+import path from "path";
 
 declare module "@remix-run/cloudflare" {
   interface Future {
@@ -13,6 +14,13 @@ declare module "@remix-run/cloudflare" {
 }
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, ""),
+      "#": path.resolve(__dirname, "app"),
+      $: path.resolve(__dirname, "server"),
+    },
+  },
   plugins: [
     remixCloudflareDevProxy({
       getLoadContext,
@@ -24,6 +32,15 @@ export default defineConfig({
         v3_throwAbortReason: true,
         v3_singleFetch: true,
         v3_lazyRouteDiscovery: true,
+      },
+      routes(defineRoutes) {
+        return defineRoutes((route) => {
+          route("/", "routes/_index.tsx", { index: true });
+
+          route("/projects/:project", "routes/projects/index.tsx", {
+            index: true,
+          });
+        });
       },
     }),
     tsconfigPaths(),

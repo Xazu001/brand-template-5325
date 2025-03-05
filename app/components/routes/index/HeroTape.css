@@ -1,0 +1,23 @@
+.box{
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.tape{
+  animation-name: tapeSlide;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  display: flex;
+  white-space: nowrap;
+}
+
+@keyframes tapeSlide {
+  0%{
+    transform: translateX(0);
+  }
+
+  100%{
+    transform: translateX(-100%);
+  }
+}
