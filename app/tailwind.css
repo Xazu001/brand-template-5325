@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply bg-[#127cea] text-light;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  button,
+  a,
+  strong {
+    @apply font-bold;
+  }
+
+  h1 {
+    @apply text-7xl;
+  }
+
+  h2 {
+    @apply text-6xl;
+  }
+
+  h3 {
+    @apply text-5xl;
+  }
+
+  h4 {
+    @apply text-4xl;
+  }
+
+  h5 {
+    @apply text-3xl;
+  }
+
+  p {
+    @apply text-base;
+  }
+
+  /* -- Buttons */
+  .commonButton {
+  }
+  /* -- Inputs */
+  .commonInput {
+  }
+}
