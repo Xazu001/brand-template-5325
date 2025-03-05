@@ -8,7 +8,7 @@ A ready-to-use template that you can easily clone, customize, and deploy on Clou
 ## Basic Setup
 
 1. **Create a `wrangler.toml` file** and add the following content:
-\
+  
    ```toml
    name = "(Your own name)"
    compatibility_date = "2023-10-30"
