@@ -39,7 +39,6 @@ export const action = async ({ request, context }: ActionFunctionArgs) => {
 
   if (Object.keys(errorChecker).length > 0) {
     return {
-      data: null,
       errors: errorChecker,
     };
   }
@@ -71,12 +70,10 @@ export const action = async ({ request, context }: ActionFunctionArgs) => {
       data: {
         general: "success!",
       },
-      errors: null,
     };
   }
 
   return {
-    data: null,
     errors: {
       general: "Something gone wrong!",
     },
